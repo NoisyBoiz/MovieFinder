@@ -1,0 +1,126 @@
+:root {
+  --notification-width: 30rem;
+  --notification-height: auto;
+  --animation-time: 0.25s;
+  --icon-size: 3.5rem;
+  --button-height: 2.5rem;
+}
+
+/* Overlay */
+.notification-container {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--colorBorderSearch);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--animation-time) ease;
+}
+.notification-container.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Notification box */
+.notification-box {
+  background-color: var(--colorBgBody);
+  width: var(--notification-width);
+  max-width: 95%;
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeIn var(--animation-time) ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  outline: none;
+}
+
+/* Icon */
+.notification-head span {
+  font-size: var(--icon-size);
+  animation: scaleIn 0.4s ease;
+}
+
+/* Title */
+.notification-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--colorTextWhite);
+}
+
+/* Message */
+.notification-message {
+  font-size: 1rem;
+  color: var(--colorTextWhite);
+  line-height: 1.5;
+}
+
+/* Footer Buttons */
+.notification-footer {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+.notification-footer button {
+  min-width: 8rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  height: var(--button-height);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.btn-close {
+  background-color: #6c757d;
+}
+.btn-accept {
+  background-color: #28a745;
+}
+.btn-cancel {
+  background-color: #dc3545;
+}
+
+/* Timer */
+.notification-timer {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Animations */
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes fadeIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

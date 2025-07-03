@@ -1,0 +1,160 @@
+:root{
+    --widthCardCommon: 12vw;
+}
+.commonContainer{
+    padding: 1% 3%;
+}
+.commonContainer h2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: fit-content;
+    text-transform: capitalize;
+}
+.commonContainer h2>span{
+    background-color: var(--colorRed);
+    padding: 0.1% 1.5%;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    margin: 0 1%;
+}
+
+.topCommonContainer{
+    display: grid;
+    grid-template-columns: repeat(5,20%);
+    row-gap: 1.5rem;
+    justify-items: center;
+    transition: opacity 0.3s ease-in-out;
+}
+.commonCard{
+    width: fit-content;
+    height: calc(var(--widthCardCommon)*3/2 + var(--widthCardCommon)*3/12);
+    margin: 1% 1.5%;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    position: relative;
+    border-radius: 1.2rem;
+    animation: loadCard 0.5s ease-in-out forwards;
+}
+.commonCard a{
+    text-decoration: none;
+    color: var(--colorTextWhite);
+    font-size: 0.9rem;
+}
+.commonCard img{
+    width: var(--widthCardCommon);
+    height: calc(var(--widthCardCommon)*3/2);
+    border-radius: 1.2rem;
+    transition: transform 0.5s ease-in-out;
+}
+.commonCardComing{
+    margin: 0;
+    padding: 0 0.5rem;
+    width: fit-content;
+    height: 1.3rem;
+    font-size: 0.6rem;
+    border-radius: 2rem;
+    font-weight: 500;
+    position: absolute;
+    top: 4%;
+    left: 4%;
+    color: rgb(240, 240, 240) !important;
+    background-color: var(--colorRed);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+.commonCardRate{
+    margin: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    color: rgb(242, 242, 242) !important;
+    font-size: 0.75rem;
+    font-weight: 500;
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    background-color: var(--colorRed);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.commonCardContent{
+    width: var(--widthCardCommon);
+    height: calc(var(--widthCardCommon)*3/12);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.commonCardName{
+    margin: 0;
+    padding: 2% 3%;
+    width: 94%;
+    height: fit-content;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.commonCardDay{
+    margin: 0;
+    padding: 0 3%;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--colorRed);
+    font-style: italic;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 100%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
+}
+@keyframes loadCard{
+    0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@media screen and (max-width: 1024px){
+    :root{
+        --widthCardCommon: 15vw;
+    }
+    .topCommonContainer{
+        grid-template-columns: repeat(4,25%);
+    }
+}
+@media screen and (max-width: 760px){
+    :root{
+        --widthCardCommon: 26vw;
+    }
+    .topCommonContainer{
+        grid-template-columns: repeat(3,calc(100% / 3));
+    }
+}
+@media screen and (max-width: 480px){
+    :root{
+        --widthCardCommon: 38vw;
+    }
+    .topCommonContainer{
+        grid-template-columns: repeat(2,calc(100% / 2));
+    }
+}
+@media screen and (max-width: 360px){
+    :root{
+        --widthCardCommon: 50vw;
+    }
+    .topCommonContainer{
+        grid-template-columns: 100%;
+    }
+}
