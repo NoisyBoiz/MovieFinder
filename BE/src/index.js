@@ -1,7 +1,8 @@
 import express from 'express';
-import connect from './Config/index.js';
 import cors from 'cors';
-import child_process from 'child_process';
+import dotenv from 'dotenv';
+import connect from './Config/index.js';
+dotenv.config();
 connect();
 
 import moviesRouter from './Routes/movies.js';
@@ -9,12 +10,9 @@ import usersRouter from './Routes/users.js';
 import genresRouter from './Routes/genres.js';
 import commentsRouter from './Routes/comments.js';
 import castsRouter from './Routes/casts.js';
-import cron from 'node-cron';
-import dotenv from 'dotenv';
-dotenv.config();
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(cors());
@@ -26,5 +24,5 @@ app.use("/comments", commentsRouter);
 app.use("/casts", castsRouter);
 
 app.listen(PORT, () => {
-    console.log('Example app listening on port 3000!');
+    console.log(`Server is running on http://localhost:${PORT}`);
 });

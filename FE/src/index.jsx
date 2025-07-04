@@ -1,15 +1,11 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 import { useTranslation } from 'react-i18next';
-
 import './i18n/i18n.jsx';
 import './styles/globalStyle.css';
-
 import DarkMode from './utils/darkMode';
 import LocalStorage from './utils/localStorage.jsx';
-
 import { publicRoutes } from './router/routes.jsx';
 import Layout from './layout/index.jsx';
 import { NotificationProvider } from "./component/notification.jsx";

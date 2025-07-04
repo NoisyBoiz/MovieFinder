@@ -1,4 +1,4 @@
-const path = "http://localhost:3001";
+const API_URL = process.env.API_URL || "http://localhost:5000";
 
 const handleLogout = () => {
   localStorage.removeItem("user-info");
@@ -8,7 +8,7 @@ const handleLogout = () => {
 
 const config = {
   getMethod: async (url) => {
-    const response = await fetch(path + url, {
+    const response = await fetch(API_URL + url, {
       method: "get",
       headers: {
         'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ const config = {
     let x = localStorage.getItem("user-info");
     let token = x ? JSON.parse(x).token : "";
 
-    const response = await fetch(path + url, {
+    const response = await fetch(API_URL + url, {
       method: "post",
       headers: {
         'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const config = {
     let x = localStorage.getItem("user-info");
     let token = x ? JSON.parse(x).token : "";
 
-    const response = await fetch(path + url, {
+    const response = await fetch(API_URL + url, {
       method: "delete",
       headers: {
         'Content-Type': 'application/json',
