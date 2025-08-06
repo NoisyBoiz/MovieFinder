@@ -3,6 +3,8 @@
 A full-stack web application for searching movies, using **ReactJS** for the frontend, **Node.js + Express** for the backend
 , **MongoDB** as the database. Users can browse, search, and view details of movies stored in a MongoDB database. 
 
+## 🌐 WebSite
+https://find-movie-sepia.vercel.app/
 
 ## 📁 Project Structure
 
@@ -10,30 +12,30 @@ A full-stack web application for searching movies, using **ReactJS** for the fro
 MovieFinder/
 ├── BE/                     # Backend - Node.js + Express
 │   ├── src/
-│   │   ├── Config/         # Cấu hình (DB, API)
-│   │   ├── Controllers/    # Xử lý logic request
-│   │   ├── Models/         # Định nghĩa schema MongoDB
-│   │   ├── ResponseObj/    # Chuẩn hóa cấu trúc phản hồi
-│   │   ├── Routes/         # Định tuyến Express
-│   │   ├── Services/       # Xử lý nghiệp vụ / gọi API ngoài
-│   │   └── index.js        # Điểm bắt đầu server
-│   ├── .env                # Biến môi trường backend
+│   │   ├── Config/         # Configuration (DB, API)
+│   │   ├── Controllers/    # Request logic handlers
+│   │   ├── Models/         # MongoDB schema definitions
+│   │   ├── ResponseObj/    # Response structure standardization
+│   │   ├── Routes/         # Express routing
+│   │   ├── Services/       # Business logic / External API calls
+│   │   └── index.js        # Server entry point
+│   ├── .env                # Backend environment variables
 │   ├── package.json
 │   └── package-lock.json
 │
 ├── FE/                     # Frontend - ReactJS
 │   ├── public/
 │   ├── src/
-│   │   ├── component/      # Các component UI dùng lại
-│   │   ├── i18n/           # File đa ngôn ngữ (i18next)
-│   │   ├── layout/         # Layout dùng chung
-│   │   ├── pages/          # Các trang chính (Home, Detail, ...)
-│   │   ├── router/         # Cấu hình React Router
-│   │   ├── services/       # Gọi API từ frontend
-│   │   ├── styles/         # CSS / Framework style
-│   │   ├── utils/          # Hàm tiện ích
-│   │   └── index.jsx       # Entry point React
-│   ├── .env                # Biến môi trường frontend
+│   │   ├── component/      # Reusable UI components
+│   │   ├── i18n/           # Internationalization files (i18next)
+│   │   ├── layout/         # Shared layouts
+│   │   ├── pages/          # Main pages (Home, Detail, etc.)
+│   │   ├── router/         # React Router configuration
+│   │   ├── services/       # Frontend API calls
+│   │   ├── styles/         # CSS / Styling framework
+│   │   ├── utils/          # Utility functions
+│   │   └── index.jsx       # React entry point
+│   ├── .env                # Frontend environment variables
 │   ├── package.json
 │   └── package-lock.json
 ```
@@ -93,7 +95,7 @@ npm install
 
 #### 2. Configure Environment Variables
 ```
-API_URL=http://localhost:5000
+REACT_APP_API_URL=http://localhost:5000
 ```
 
 #### 3. Start the Frontend
